@@ -1,5 +1,3 @@
-// Header.tsx — thanh tiêu đề của phu-xuan-react
-
 function Header() {
   return (
     <header>

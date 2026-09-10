@@ -3,17 +3,19 @@
 
 import Header from './components/Header'
 import WelcomeBanner from './components/WelcomeBanner'
-import PostCard from './components/PostCard'
 import Footer from './components/Footer'
+import PostList from './features/posts/PostList'
+import { APP_NAME } from './constants'
 
 function App() {
   return (
     <>
       <Header />
-      <main>
+      <main style={{ padding: '2rem 1rem', maxWidth: '900px', margin: '0 auto' }}>
         <WelcomeBanner />
-        {/* PostCard hiển thị một bài viết mẫu */}
-        <PostCard />
+        <h1 style={{ marginTop: '2rem' }}>{APP_NAME}</h1>
+        {/* Tích hợp danh sách bài viết từ API */}
+        <PostList />
       </main>
       <Footer />
     </>
