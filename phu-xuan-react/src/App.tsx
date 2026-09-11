@@ -1,30 +1,18 @@
 function App() {
-  // 1. Khai báo dữ liệu sinh viên
-  const hoTen = "Lê Thị Hồng";
-  const maSinhVien = "22CNTT045";
-  const diemChuyenCan = 9;
-  const diemBaiTap = 8;
-  const diemKiemTra = 7.5;
-  const daNopBaiTapVeNha = false; // Thử đổi thành true để kiểm tra thay đổi
+  const soLuongDiaDiem = 3;
+  const trangThaiMoCua = true;
 
   return (
-    <div className="student-card" style={{ padding: "1.5rem", border: "1px solid #ccc", borderRadius: "8px", maxWidth: "400px" }}>
-      <h2>{hoTen}</h2>
-      <p>Mã số sinh viên: {maSinhVien}</p>
-      
-      {/* 2. Nhúng phép toán tính điểm quá trình */}
+    <>
+      <div className="trang-chu">
+        <h1>Danh sách địa điểm</h1>
+        <p>Tổng số địa điểm: {soLuongDiaDiem}</p>
+      </div>
       <p>
-        Điểm quá trình:{" "}
-        {diemChuyenCan * 0.2 + diemBaiTap * 0.4 + diemKiemTra * 0.4}
+        Trạng thái: {trangThaiMoCua ? "Đang mở cửa" : "Đã đóng cửa"}
       </p>
-
-      {/* 3. Nhúng điều kiện kiểm tra nộp bài bằng toán tử 3 ngôi */}
-      <p style={{ color: daNopBaiTapVeNha ? "green" : "crimson", fontWeight: "bold" }}>
-        {daNopBaiTapVeNha
-          ? "Đã nộp bài tập về nhà Buổi 3."
-          : "Chưa nộp bài tập về nhà Buổi 3 — cần nộp trước Buổi 4!"}
-      </p>
-    </div>
+      <img src="https://placehold.co/60x60" alt="Placeholder" />
+    </>
   );
 }
 
