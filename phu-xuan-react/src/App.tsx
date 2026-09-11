@@ -1,25 +1,31 @@
-// App.tsx — trang chủ phu-xuan-react v0.1
-// Buổi 2 · INT.7.18 — Web FrontEnd nâng cao
-
-import Header from './components/Header'
-import WelcomeBanner from './components/WelcomeBanner'
-import Footer from './components/Footer'
-import PostList from './features/posts/PostList'
-import { APP_NAME } from './constants'
-
 function App() {
+  // 1. Khai báo dữ liệu sinh viên
+  const hoTen = "Lê Thị Hồng";
+  const maSinhVien = "22CNTT045";
+  const diemChuyenCan = 9;
+  const diemBaiTap = 8;
+  const diemKiemTra = 7.5;
+  const daNopBaiTapVeNha = false; // Thử đổi thành true để kiểm tra thay đổi
+
   return (
-    <>
-      <Header />
-      <main style={{ padding: '2rem 1rem', maxWidth: '900px', margin: '0 auto' }}>
-        <WelcomeBanner />
-        <h1 style={{ marginTop: '2rem' }}>{APP_NAME}</h1>
-        {/* Tích hợp danh sách bài viết từ API */}
-        <PostList />
-      </main>
-      <Footer />
-    </>
-  )
+    <div className="student-card" style={{ padding: "1.5rem", border: "1px solid #ccc", borderRadius: "8px", maxWidth: "400px" }}>
+      <h2>{hoTen}</h2>
+      <p>Mã số sinh viên: {maSinhVien}</p>
+      
+      {/* 2. Nhúng phép toán tính điểm quá trình */}
+      <p>
+        Điểm quá trình:{" "}
+        {diemChuyenCan * 0.2 + diemBaiTap * 0.4 + diemKiemTra * 0.4}
+      </p>
+
+      {/* 3. Nhúng điều kiện kiểm tra nộp bài bằng toán tử 3 ngôi */}
+      <p style={{ color: daNopBaiTapVeNha ? "green" : "crimson", fontWeight: "bold" }}>
+        {daNopBaiTapVeNha
+          ? "Đã nộp bài tập về nhà Buổi 3."
+          : "Chưa nộp bài tập về nhà Buổi 3 — cần nộp trước Buổi 4!"}
+      </p>
+    </div>
+  );
 }
 
-export default App
+export default App;
